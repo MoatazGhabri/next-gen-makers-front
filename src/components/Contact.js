@@ -31,7 +31,7 @@ export const Contact = () => {
     setButtonText("Sending...");
 
     try {
-      let response = await fetch(`${apiUrl}/contact`, {
+      let response = await fetch("https://next-gen-makers-back.onrender.com/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
