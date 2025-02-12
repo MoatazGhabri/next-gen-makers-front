@@ -58,11 +58,10 @@ export const Banner = () => {
                 <span className="tagline">Bienvenue chez notre agence</span>
                 <h1>{`Salut! Nous sommes Next Generation Makers spécialisés dans`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Developement Web", "Design Graphic" ]'><span className="wrap">{text}</span></span></h1>
                   <p> Chez Next Generation Makers, nous transformons vos idées en réalité numérique. 
-  Que ce soit pour le développement web ou la conception graphique, notre équipe 
+  Que ce soit pour le développement web & Mobile ou Design graphique, notre équipe 
   d'experts met son savoir-faire au service de vos projets pour créer des solutions 
   innovantes et sur-mesure. Nous combinons créativité et technologie pour vous offrir 
   une expérience unique et performante. Rejoignez-nous et donnons vie à vos ambitions !</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>

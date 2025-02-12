@@ -14,7 +14,6 @@ export const Footer = () => {
           <Col sm={12} md={4}>
             <img src={logo} alt="Logo" style={{ width: "120px", marginBottom: "20px" }} />
             <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: "2" }}>
-              <li>UX/UI Design</li>
               <li>Développement web</li>
               <li>Site Vitrine</li>
               <li>Site E-commerce</li>
@@ -39,9 +38,8 @@ export const Footer = () => {
               <FaEnvelope style={{ marginRight: "8px" }} /> nextgenmakers.contact@gmail.com
             </p>
             <div className="social-icon" style={{ marginTop: "20px" }}>
-              <a href="#"><img src={navIcon1} alt="Icon" /></a>
-              <a href="#"><img src={navIcon2} alt="Icon" /></a>
-              <a href="#"><img src={navIcon3} alt="Icon" /></a>
+            <a href="https://www.facebook.com/profile.php?id=61572874361877"><img src={navIcon2} alt="Page Facebook" /></a>
+            <a href="https://www.instagram.com/n.g.m_agency?igsh=MTVtYTNmMGtjMGd1bQ=="><img src={navIcon3} alt="Page Instagram" /></a>
             </div>
           </Col>
         </Row>
