@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Banner = () => {
+export const Banner = ({ scrollToContact }) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
@@ -13,7 +13,23 @@ export const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = [ "Developement Web", "Developement Mobile","Design Graphic" ];
   const period = 2000;
+  const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [])
+
+ 
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -46,6 +62,7 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex + 1);
     }
   }
+  
 
   return (
     <section className="banner" id="home">
@@ -62,7 +79,8 @@ export const Banner = () => {
   d'experts met son savoir-faire au service de vos projets pour créer des solutions 
   innovantes et sur-mesure. Nous combinons créativité et technologie pour vous offrir 
   une expérience unique et performante. Rejoignez-nous et donnons vie à vos ambitions !</p>
-              </div>}
+  <button onClick={scrollToContact}>Let’s Connect <ArrowRightCircle size={25} /></button>
+  </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>

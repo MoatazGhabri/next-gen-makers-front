@@ -8,17 +8,22 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Cursor } from './components/Cursor';
+import { useRef } from "react";
 
 function App() {
+  const contactRef = useRef(null); 
+
   return (
     <div className="App">
       <NavBar />
-      <Banner />
-      <Services/>
+      <Banner scrollToContact={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })} />
+      <Services />
       <Projects />
-      <Contact />
+      <div ref={contactRef}>
+        <Contact />
+      </div>
       <Footer />
-      <Cursor/>
+      <Cursor />
     </div>
   );
 }
